@@ -3,7 +3,7 @@ pipeline {
     stages {
   stage('maven install') {
     steps {
-      withMaven {
+      withMaven(maven: 'Maven 3')  {
     sh 'mvn clean install'
 }
 }
