@@ -4,7 +4,11 @@ pipeline {
   stage('Build') {
     steps {
     sh 'make' 
-    archiveArtifacts artifacts: '**/target/*.jar', fingerprint: true
+}
+    }
+        stage('Deploy') {
+    steps {
+    sh 'make publish' 
 }
     }
   }
